@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { addTutor } from 'src/actions.js'
+import { connect } from 'react-redux'
 
 
 
@@ -55,4 +57,4 @@ class TutorNew extends Component {
     }
 }
 
-export default TutorNew;
+export default connect(null, { addTutor})(TutorNew)
