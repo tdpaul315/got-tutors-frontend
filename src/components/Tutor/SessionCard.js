@@ -1,14 +1,16 @@
 import React from 'react';
 
-const TutorCard = () => {
+const SessionCard = () => {
     return (
-        <li className="tutor-card">
+        
+        <li className="session-card">
             Tutor Name:
             Course(s):
             Years of Exp:
             Availability: 
-        </li>
+        </li> 
+        
     );
 };
 
-export default TutorCard;
+export default SessionCard;
