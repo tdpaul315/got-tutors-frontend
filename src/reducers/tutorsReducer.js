@@ -7,9 +7,17 @@ export default (state = [], action) => {
       case "REMOVE_TUTOR":
           let newTutors = state.filter(tutor => tutor.id !== action.payload)
           return [...newTutors]
-    //   case "LIST_SESSIONS":
-    //       return [...action.payload]
       default:
           return state
   }
 }
+
+
+
+
+
+
+
+
+//   case "LIST_SESSIONS":
+    //       return [...action.payload]
