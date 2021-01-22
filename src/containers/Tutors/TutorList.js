@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TutorCard from '../../components/Tutor/TutorCard.js'
 import { connect } from 'react-redux'
+import { Container } from '@material-ui/core';
 
 
 
@@ -15,7 +16,7 @@ export class TutorList extends Component {
         return (
             
               <div>
-                 <h3>Check out all of our amazing tutors!</h3>
+                 <Container><h3>Welcome to the Got Tutors Community! Below are a list of tutors in our wonderful community, check them out by clicking their name!</h3></Container>
                   <ul className="tutor-collection">
                   {tutors}
                   </ul>

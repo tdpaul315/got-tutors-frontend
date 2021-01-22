@@ -13,7 +13,7 @@ const TutorCard = ({tutor, removeTutor}) => {
                Years of Exp: {tutor.yrs_of_exp} <br />            
                Availability: {tutor.availability} <br />
                <button onClick={()=>removeTutor(tutor.id)}>Delete Profile</button> 
-           </ul> 
+           </ul><br />
         </Container>
     );
 };
