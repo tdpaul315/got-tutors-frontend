@@ -1,30 +1,53 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Container } from '@material-ui/core';
+import { connect } from 'react-redux';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 
-class TutorShow extends Component {
-    constructor(props){
-        super(props)
 
-        let paramsID = parseInt(this.props.match.params.id)
-        let tutor = props.tutors.find(tutor => tutor.id === paramsID)
 
-        this.state = {
-            tutor: tutor ? tutor : {name: 'N/A', course: 'N/A', yrs_of_exp: 'N/A', availability: 'N/A'}
-        }
-    }
-    render() {
-        const {name, course, yrs_of_exp, availability} = this.state.tutor;
-        return (
-            <div>
-                <h3>{ name }</h3>
-                <p>Course: { course }</p>
-                <p>Experience: { yrs_of_exp }</p>
-                <p>Availability: { availability }</p>
-            <button>View My Upcoming Sessions</button>
-            <button>View Students</button>
-            </div>
-        );
+
+const TutorShow = (props) => {
+
+    let paramsId = parseInt(props.match.params.id)
+    let tutor =  props.tutors.find(tutor => tutor.id === paramsId)
+    
+    return (
+
+        <Container >
+            <Avatar src="/broken-image.jpg" />
+            <h4>Name: {tutor ? tutor.name : 'N/A'}</h4>
+            <p> Course: {tutor ? tutor.course : 'N/A'} </p>
+            <p> Exp: {tutor ? tutor.yrs_of_exp : 'N/A'} yrs</p>
+            <p> Availability: {tutor ? tutor.availability : 'N/A'}</p><hr /><br />
+            {/* <h4 style={{textAlignVertical: "center",textAlign: "center"}}>Upcoming Sessions</h4><hr />
+            <p>{tutor ? tutor.sessions : 'No Upcoming Sessions'}</p>   */}
+            <Button component={Link}
+              to="/"
+              fullWidth
+              variant="contained"
+              color="primary">View Sessions</Button>&nbsp;&nbsp;
+              <Button component={Link}
+              to="/"
+              fullWidth
+              variant="contained"
+              color="primary">View Students</Button>
+         </Container>
+        
+    
+
+    )
+}
+
+
+
+const mapStateToProps = state => {
+    return {
+      tutors: state.tutors
     }
 }
 
-export default TutorShow;
+export default connect(mapStateToProps)(TutorShow)
+

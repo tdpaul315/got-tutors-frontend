@@ -42,7 +42,7 @@ class UserNew extends Component {
                       <input type="text" name="grade" id="grade" value={this.state.grade} onChange={ this.handleChange }/><br /><br />
                     </div>
     
-                <input type="submit" value="Create Tutor" className="btn" />
+                <input type="submit" value="Create Profile" className="btn" />
             </form>
         );
     }

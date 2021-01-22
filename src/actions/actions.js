@@ -25,9 +25,10 @@ export const addTutor = tutor => {
     }
 }
 
+
 export const removeTutor = tutorID => {
     return(dispatch) => {
-        return fetch(`http://localhost:3000/tutor/${tutorID}`,{
+        return fetch(`http://localhost:3000/tutors/${tutorID}`,{
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,3 +40,13 @@ export const removeTutor = tutorID => {
         })
     }
 }
+
+// export const fetchSessions = () => {
+//     return(dispatch) => {
+//         return fetch('http://localhost:3000/sessions')
+//         .then(resp => resp.json())
+//         .then(sessions => {
+//             dispatch({ type: "LIST_SESSIONS", payload: sessions })
+//         })
+//     }
+// }

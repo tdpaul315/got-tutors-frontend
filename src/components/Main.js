@@ -3,12 +3,13 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import AddToPhotosIcon from '@material-ui/icons/AddToPhotos';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+
 
 function Copyright() {
   return (
@@ -22,6 +23,7 @@ function Copyright() {
     </Typography>
   );
 }
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,7 +73,8 @@ export default function Main () {
           </Typography>
           <form className={classes.form} noValidate>
             <Button
-              type="submit"
+              component={Link}
+              to="/users/home"
               fullWidth
               variant="contained"
               color="primary"
@@ -80,11 +83,12 @@ export default function Main () {
               I Am a Student
             </Button>
             <Button
-              type="submit"
+              component={Link}
+              to="/tutors/home"
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}
+              
             >
               I Am a Tutor
             </Button>
